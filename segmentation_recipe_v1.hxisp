@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Workflow name="Workflow">
+  <WorkflowStepsList>
+    <Step uid="{4ac0143d-283a-47c4-be84-d4119fc04733}">
+      <CommonInfo productVersion="2023.2" productName=""/>
+      <ToolInfo action="INPUT_STEP"/>
+      <StepInfo outputName="" name="" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+    </Step>
+    <Step uid="{7c15f120-f443-46aa-b5b4-4b924d456f0f}">
+      <CommonInfo productVersion="2023.2" productName=""/>
+      <ToolInfo action="INPUT_STEP"/>
+      <StepInfo outputName="" name="Electrode mask" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+    </Step>
+    <Step uid="{3d2e72be-3ae1-4ab2-a2e9-f6428c056f7a}">
+      <CommonInfo productVersion="2023.2" productName=""/>
+      <ToolInfo action="INPUT_STEP"/>
+      <StepInfo outputName="" name="Aluminium mask" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+    </Step>
+    <Step uid="{107d2d74-aac1-490c-b759-9eac9bdb2998}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Object(3)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Object(3)&quot;&#xa;&quot;Object(3)&quot; setIconPosition 0 0&#xa;&quot;Object(3)&quot; fire&#xa;&quot;Object(3)&quot; applyTransformToResult 1&#xa;&quot;Object(3)&quot; fire&#xa;&quot;Object(3)&quot; setViewerMask 16383&#xa;&quot;Object(3)&quot; setPickable 1&#xa;&quot;Object(3)&quot; data connect data-2&#xa;&quot;Object(3)&quot; reference connect reference-2&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{4ac0143d-283a-47c4-be84-d4119fc04733}"/>
+        <Connection resultSlot="-2" name="reference" uid="{4ac0143d-283a-47c4-be84-d4119fc04733}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{7034f25e-2480-4075-b226-4a38668e30f9}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(4)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(4)&quot;&#xa;&quot;Reference Change(4)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(4)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(4)&quot; reference connect reference-1&#xa;&quot;Reference Change(4)&quot; fire&#xa;&quot;Reference Change(4)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(4)&quot; fire&#xa;&quot;Reference Change(4)&quot; setViewerMask 16383&#xa;&quot;Reference Change(4)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(4)&quot; data connect data-2" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{107d2d74-aac1-490c-b759-9eac9bdb2998}"/>
+        <Connection resultSlot="-1" name="reference" uid="{3d2e72be-3ae1-4ab2-a2e9-f6428c056f7a}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{ef549ffa-5e4b-493b-bef7-1ab0ce241d07}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Invert(3)" resourceKey="negative"/>
+      <StepInfo outputName="" name="Invert" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create negative &quot;Invert(3)&quot;&#xa;&quot;Invert(3)&quot; setIconPosition 350 0&#xa;&quot;Invert(3)&quot; setVar &quot;CustomHelp&quot; {negative.html}&#xa;&quot;Invert(3)&quot; interpretation setValue 0&#xa;&quot;Invert(3)&quot; outputLocation setIndex 0 0&#xa;&quot;Invert(3)&quot; inputImage connect &quot;0_Aluminiummask_aluminium_mask_inverted&quot;&#xa;&quot;Invert(3)&quot; numberOfSignificantBits setMinMax 0 0 2147483648&#xa;&quot;Invert(3)&quot; numberOfSignificantBits setValue 0 8&#xa;&quot;Invert(3)&quot; applyTransformToResult 1&#xa;&quot;Invert(3)&quot; fire&#xa;&quot;Invert(3)&quot; setViewerMask 16383&#xa;&quot;Invert(3)&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage" uid="{7034f25e-2480-4075-b226-4a38668e30f9}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{83e46ebe-abcd-4a92-887e-ef98a9a357f9}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(5)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(5)&quot;&#xa;&quot;Reference Change(5)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(5)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(5)&quot; data connect data-2&#xa;&quot;Reference Change(5)&quot; fire&#xa;&quot;Reference Change(5)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(5)&quot; fire&#xa;&quot;Reference Change(5)&quot; setViewerMask 16383&#xa;&quot;Reference Change(5)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(5)&quot; reference connect reference-1" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{ef549ffa-5e4b-493b-bef7-1ab0ce241d07}"/>
+        <Connection resultSlot="-1" name="reference" uid="{4ac0143d-283a-47c4-be84-d4119fc04733}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{5e1c68f9-4a84-44db-9ac8-afb2fb8ee2d3}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Mask" resourceKey="mask"/>
+      <StepInfo outputName="" name="Mask" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create mask &quot;Mask&quot;&#xa;&quot;Mask&quot; setVar &quot;CustomHelp&quot; {mask.html}&#xa;&quot;Mask&quot; setVar &quot;CustomXML&quot; {mask_config.xml}&#xa;&quot;Mask&quot; interpretation setValue 0&#xa;&quot;Mask&quot; outputLocation setIndex 0 0&#xa;&quot;Mask&quot; inputImage connect &quot;0_Data_reference_data&quot;&#xa;&quot;Mask&quot; inputBinaryImage connect &quot;3_Invert&quot;&#xa;&quot;Mask&quot; applyTransformToResult 1&#xa;&quot;Mask&quot; fire&#xa;&quot;Mask&quot; setViewerMask 16383&#xa;&quot;Mask&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="0" name="inputBinaryImage" uid="{ef549ffa-5e4b-493b-bef7-1ab0ce241d07}"/>
+        <Connection resultSlot="-2" name="inputImage" uid="{83e46ebe-abcd-4a92-887e-ef98a9a357f9}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{16a51fe2-2f97-40f2-8d26-bb309ed906cd}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(2)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(2)&quot;&#xa;&quot;Reference Change(2)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(2)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(2)&quot; reference connect reference-1&#xa;&quot;Reference Change(2)&quot; fire&#xa;&quot;Reference Change(2)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(2)&quot; fire&#xa;&quot;Reference Change(2)&quot; setViewerMask 16383&#xa;&quot;Reference Change(2)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(2)&quot; data connect data-2" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{5e1c68f9-4a84-44db-9ac8-afb2fb8ee2d3}"/>
+        <Connection resultSlot="-1" name="reference" uid="{7c15f120-f443-46aa-b5b4-4b924d456f0f}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{293fb765-ec9c-4c63-8121-dfb4b4a54698}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Invert(2)" resourceKey="negative"/>
+      <StepInfo outputName="" name="Invert" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create negative &quot;Invert(2)&quot;&#xa;&quot;Invert(2)&quot; setIconPosition 269 627&#xa;&quot;Invert(2)&quot; setVar &quot;CustomHelp&quot; {negative.html}&#xa;&quot;Invert(2)&quot; interpretation setValue 0&#xa;&quot;Invert(2)&quot; outputLocation setIndex 0 0&#xa;&quot;Invert(2)&quot; inputImage connect &quot;0_Electrodemask_electrode_mask&quot;&#xa;&quot;Invert(2)&quot; numberOfSignificantBits setMinMax 0 0 2147483648&#xa;&quot;Invert(2)&quot; numberOfSignificantBits setValue 0 8&#xa;&quot;Invert(2)&quot; applyTransformToResult 1&#xa;&quot;Invert(2)&quot; fire&#xa;&quot;Invert(2)&quot; setViewerMask 16383&#xa;&quot;Invert(2)&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage" uid="{16a51fe2-2f97-40f2-8d26-bb309ed906cd}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{f3163efd-f354-4844-bcb3-421d10be8036}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(4)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(4)&quot;&#xa;&quot;Reference Change(4)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(4)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(4)&quot; data connect data-2&#xa;&quot;Reference Change(4)&quot; fire&#xa;&quot;Reference Change(4)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(4)&quot; fire&#xa;&quot;Reference Change(4)&quot; setViewerMask 16383&#xa;&quot;Reference Change(4)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(4)&quot; reference connect reference0" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{293fb765-ec9c-4c63-8121-dfb4b4a54698}"/>
+        <Connection resultSlot="0" name="reference" uid="{5e1c68f9-4a84-44db-9ac8-afb2fb8ee2d3}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{92801e9c-412d-4063-a952-2019f0b0b776}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Mask" resourceKey="mask"/>
+      <StepInfo outputName="" name="Mask" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create mask &quot;Mask&quot;&#xa;&quot;Mask&quot; setVar &quot;CustomHelp&quot; {mask.html}&#xa;&quot;Mask&quot; setVar &quot;CustomXML&quot; {mask_config.xml}&#xa;&quot;Mask&quot; interpretation setValue 0&#xa;&quot;Mask&quot; outputLocation setIndex 0 0&#xa;&quot;Mask&quot; inputImage connect &quot;5_Mask&quot;&#xa;&quot;Mask&quot; inputBinaryImage connect &quot;7_Invert&quot;&#xa;&quot;Mask&quot; applyTransformToResult 1&#xa;&quot;Mask&quot; fire&#xa;&quot;Mask&quot; setViewerMask 16383&#xa;&quot;Mask&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="0" name="inputBinaryImage" uid="{293fb765-ec9c-4c63-8121-dfb4b4a54698}"/>
+        <Connection resultSlot="-2" name="inputImage" uid="{f3163efd-f354-4844-bcb3-421d10be8036}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{dce72ad8-93eb-4324-8d88-98e671b553fd}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Thresholding" resourceKey="HxISPThreshold"/>
+      <StepInfo outputName="" name="Thresholding" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPThreshold &quot;Thresholding&quot;&#xa;&quot;Thresholding&quot; setVar &quot;CustomHelp&quot; {HxISPThreshold}&#xa;&quot;Thresholding&quot; setVar &quot;CustomXML&quot; {HxISPThreshold_config.xml}&#xa;&quot;Thresholding&quot; data connect &quot;9_Mask&quot;&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; intensityRange setValues 0.001 0.42&#xa;&quot;Thresholding&quot; intensityRange setButtons 0&#xa;&quot;Thresholding&quot; intensityRange setEditButton 1&#xa;&quot;Thresholding&quot; intensityRange setIncrement inf&#xa;&quot;Thresholding&quot; intensityRange setSubMinMax 0 0&#xa;&quot;Thresholding&quot; applyTransformToResult 1&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; setViewerMask 16383&#xa;&quot;Thresholding&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{92801e9c-412d-4063-a952-2019f0b0b776}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{204e0631-2745-43db-9968-a9788550d45f}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Multiply by Value" resourceKey="multiplyvalue"/>
+      <StepInfo outputName="" name="Multiply by Value" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create multiplyvalue &quot;Multiply by Value&quot;&#xa;&quot;Multiply by Value&quot; setIconPosition 269 276&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomHelp&quot; {multiplyvalue.html}&#xa;&quot;Multiply by Value&quot; interpretation setValue 0&#xa;&quot;Multiply by Value&quot; outputLocation setIndex 0 0&#xa;&quot;Multiply by Value&quot; inputImage1 connect &quot;6_Thresholding&quot;&#xa;&quot;Multiply by Value&quot; value setMinMax 0 -3.40282346638529e+38 3.40282346638529e+38&#xa;&quot;Multiply by Value&quot; value setValue 0 2&#xa;&quot;Multiply by Value&quot; applyTransformToResult 1&#xa;&quot;Multiply by Value&quot; fire&#xa;&quot;Multiply by Value&quot; setViewerMask 16383&#xa;&quot;Multiply by Value&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{dce72ad8-93eb-4324-8d88-98e671b553fd}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{af74f3a1-79f8-4080-a33d-7f179403b854}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(5)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(5)&quot;&#xa;&quot;Reference Change(5)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(5)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(5)&quot; data connect data-2&#xa;&quot;Reference Change(5)&quot; fire&#xa;&quot;Reference Change(5)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(5)&quot; fire&#xa;&quot;Reference Change(5)&quot; setViewerMask 16383&#xa;&quot;Reference Change(5)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(5)&quot; reference connect reference0" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{204e0631-2745-43db-9968-a9788550d45f}"/>
+        <Connection resultSlot="0" name="reference" uid="{92801e9c-412d-4063-a952-2019f0b0b776}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{7754318d-687d-4b66-974c-3c72f86e53d5}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Thresholding" resourceKey="HxISPThreshold"/>
+      <StepInfo outputName="" name="Thresholding" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPThreshold &quot;Thresholding&quot;&#xa;&quot;Thresholding&quot; setVar &quot;CustomHelp&quot; {HxISPThreshold}&#xa;&quot;Thresholding&quot; setVar &quot;CustomXML&quot; {HxISPThreshold_config.xml}&#xa;&quot;Thresholding&quot; data connect &quot;9_Mask&quot;&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; intensityRange setValues 0.56 0.77&#xa;&quot;Thresholding&quot; intensityRange setButtons 0&#xa;&quot;Thresholding&quot; intensityRange setEditButton 1&#xa;&quot;Thresholding&quot; intensityRange setIncrement inf&#xa;&quot;Thresholding&quot; intensityRange setSubMinMax 0 0&#xa;&quot;Thresholding&quot; applyTransformToResult 1&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; setViewerMask 16383&#xa;&quot;Thresholding&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{af74f3a1-79f8-4080-a33d-7f179403b854}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{ada08534-44f7-45ad-aea7-051e67612076}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Multiply by Value" resourceKey="multiplyvalue"/>
+      <StepInfo outputName="" name="Multiply by Value" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create multiplyvalue &quot;Multiply by Value&quot;&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomHelp&quot; {multiplyvalue.html}&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomXML&quot; {multiplyvalue_config.xml}&#xa;&quot;Multiply by Value&quot; interpretation setValue 0&#xa;&quot;Multiply by Value&quot; outputLocation setIndex 0 0&#xa;&quot;Multiply by Value&quot; inputImage1 connect &quot;9_Thresholding&quot;&#xa;&quot;Multiply by Value&quot; value setValue 0 3&#xa;&quot;Multiply by Value&quot; applyTransformToResult 1&#xa;&quot;Multiply by Value&quot; fire&#xa;&quot;Multiply by Value&quot; setViewerMask 16383&#xa;&quot;Multiply by Value&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{7754318d-687d-4b66-974c-3c72f86e53d5}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{fb84f43b-77b6-474d-9707-8e5879d69495}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change(6)" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change(6)&quot;&#xa;&quot;Reference Change(6)&quot; setIconPosition 0 0&#xa;&quot;Reference Change(6)&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change(6)&quot; data connect data-2&#xa;&quot;Reference Change(6)&quot; fire&#xa;&quot;Reference Change(6)&quot; applyTransformToResult 1&#xa;&quot;Reference Change(6)&quot; fire&#xa;&quot;Reference Change(6)&quot; setViewerMask 16383&#xa;&quot;Reference Change(6)&quot; setPickable 1&#xa;&#xa;&quot;Reference Change(6)&quot; reference connect reference0" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{ada08534-44f7-45ad-aea7-051e67612076}"/>
+        <Connection resultSlot="0" name="reference" uid="{92801e9c-412d-4063-a952-2019f0b0b776}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{543f0c83-9468-409e-8a1f-0f705832ba6b}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Thresholding" resourceKey="HxISPThreshold"/>
+      <StepInfo outputName="" name="Thresholding" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPThreshold &quot;Thresholding&quot;&#xa;&quot;Thresholding&quot; setVar &quot;CustomHelp&quot; {HxISPThreshold}&#xa;&quot;Thresholding&quot; setVar &quot;CustomXML&quot; {HxISPThreshold_config.xml}&#xa;&quot;Thresholding&quot; data connect &quot;5_Mask&quot;&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; intensityRange setValues 0.47 0.54&#xa;&quot;Thresholding&quot; intensityRange setButtons 0&#xa;&quot;Thresholding&quot; intensityRange setEditButton 1&#xa;&quot;Thresholding&quot; intensityRange setIncrement inf&#xa;&quot;Thresholding&quot; intensityRange setSubMinMax 0 0&#xa;&quot;Thresholding&quot; applyTransformToResult 1&#xa;&quot;Thresholding&quot; fire&#xa;&quot;Thresholding&quot; setViewerMask 16383&#xa;&quot;Thresholding&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{fb84f43b-77b6-474d-9707-8e5879d69495}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{6defeb5e-99d2-4342-9938-5c96e75b820a}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Erosion" resourceKey="ModuleGroup Erosion"/>
+      <StepInfo outputName="" name="Erosion" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create sphereerode3d &quot;Erosion&quot;&#xa;&quot;Erosion&quot; setVar &quot;CustomHelp&quot; {sphereerode3d.html}&#xa;&quot;Erosion&quot; setVar &quot;CustomXML&quot; {sphereerode3d_config.xml}&#xa;&quot;Erosion&quot; Type setState {type Ball}&#xa;&quot;Erosion&quot; interpretation setValue 0&#xa;&quot;Erosion&quot; outputLocation setIndex 0 0&#xa;&quot;Erosion&quot; inputImage connect &quot;12_Thresholding&quot;&#xa;&quot;Erosion&quot; size setValue 0 1&#xa;&quot;Erosion&quot; precision setIndex 0 0&#xa;&quot;Erosion&quot; applyTransformToResult 1&#xa;&quot;Erosion&quot; fire&#xa;&quot;Erosion&quot; setViewerMask 16383&#xa;&quot;Erosion&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage" uid="{543f0c83-9468-409e-8a1f-0f705832ba6b}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{23238e4d-a5f3-43f2-8661-661f8a7ec37d}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Multiply by Value" resourceKey="multiplyvalue"/>
+      <StepInfo outputName="" name="Multiply by Value" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create multiplyvalue &quot;Multiply by Value&quot;&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomHelp&quot; {multiplyvalue.html}&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomXML&quot; {multiplyvalue_config.xml}&#xa;&quot;Multiply by Value&quot; interpretation setValue 0&#xa;&quot;Multiply by Value&quot; outputLocation setIndex 0 0&#xa;&quot;Multiply by Value&quot; inputImage1 connect &quot;17_Erosion&quot;&#xa;&quot;Multiply by Value&quot; value setValue 0 4&#xa;&quot;Multiply by Value&quot; applyTransformToResult 1&#xa;&quot;Multiply by Value&quot; fire&#xa;&quot;Multiply by Value&quot; setViewerMask 16383&#xa;&quot;Multiply by Value&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{6defeb5e-99d2-4342-9938-5c96e75b820a}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{d3e90b18-0a0f-47de-a6cf-4b053445af6b}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Add Image" resourceKey="addimage"/>
+      <StepInfo outputName="" name="Add Image" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create addimage &quot;Add Image&quot;&#xa;&quot;Add Image&quot; setVar &quot;CustomHelp&quot; {addimage.html}&#xa;&quot;Add Image&quot; setVar &quot;CustomXML&quot; {addimage_config.xml}&#xa;&quot;Add Image&quot; interpretation setValue 0&#xa;&quot;Add Image&quot; outputLocation setIndex 0 0&#xa;&quot;Add Image&quot; inputImage1 connect &quot;18_MultiplybyValue&quot;&#xa;&quot;Add Image&quot; inputImage2 connect &quot;14_MultiplybyValue&quot;&#xa;&quot;Add Image&quot; applyTransformToResult 1&#xa;&quot;Add Image&quot; fire&#xa;&quot;Add Image&quot; setViewerMask 16383&#xa;&quot;Add Image&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{23238e4d-a5f3-43f2-8661-661f8a7ec37d}"/>
+        <Connection resultSlot="0" name="inputImage2" uid="{ada08534-44f7-45ad-aea7-051e67612076}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{4b64dc2e-daf6-4a26-8c91-1a9f9452b4fe}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Add Image(2)" resourceKey="addimage"/>
+      <StepInfo outputName="" name="Add Image" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create addimage &quot;Add Image(2)&quot;&#xa;&quot;Add Image(2)&quot; setVar &quot;CustomHelp&quot; {addimage.html}&#xa;&quot;Add Image(2)&quot; setVar &quot;CustomXML&quot; {addimage_config.xml}&#xa;&quot;Add Image(2)&quot; interpretation setValue 0&#xa;&quot;Add Image(2)&quot; outputLocation setIndex 0 0&#xa;&quot;Add Image(2)&quot; inputImage1 connect &quot;19_AddImage&quot;&#xa;&quot;Add Image(2)&quot; inputImage2 connect &quot;11_MultiplybyValue&quot;&#xa;&quot;Add Image(2)&quot; applyTransformToResult 1&#xa;&quot;Add Image(2)&quot; fire&#xa;&quot;Add Image(2)&quot; setViewerMask 16383&#xa;&quot;Add Image(2)&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{d3e90b18-0a0f-47de-a6cf-4b053445af6b}"/>
+        <Connection resultSlot="0" name="inputImage2" uid="{204e0631-2745-43db-9968-a9788550d45f}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{e82fad39-b77a-45f6-8a0e-f4faa8da77d9}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Reference Change" resourceKey="HxISPReferenceModule"/>
+      <StepInfo outputName="" name="Reference Change" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxISPReferenceModule &quot;Reference Change&quot;&#xa;&quot;Reference Change&quot; setIconPosition 0 0&#xa;&quot;Reference Change&quot; setVar &quot;CustomHelp&quot; {HxISPReferenceModule}&#xa;&quot;Reference Change&quot; data connect data-2&#xa;&quot;Reference Change&quot; fire&#xa;&quot;Reference Change&quot; applyTransformToResult 1&#xa;&quot;Reference Change&quot; fire&#xa;&quot;Reference Change&quot; setViewerMask 16383&#xa;&quot;Reference Change&quot; setPickable 1&#xa;&#xa;&quot;Reference Change&quot; reference connect reference-1" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="reference" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{4b64dc2e-daf6-4a26-8c91-1a9f9452b4fe}"/>
+        <Connection resultSlot="-1" name="reference" uid="{3d2e72be-3ae1-4ab2-a2e9-f6428c056f7a}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+      </Results>
+    </Step>
+    <Step uid="{f4f567b9-5aae-4ac3-b9a0-09740ad313b1}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Multiply by Value" resourceKey="multiplyvalue"/>
+      <StepInfo outputName="" name="Multiply by Value" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create multiplyvalue &quot;Multiply by Value&quot;&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomHelp&quot; {multiplyvalue.html}&#xa;&quot;Multiply by Value&quot; setVar &quot;CustomXML&quot; {multiplyvalue_config.xml}&#xa;&quot;Multiply by Value&quot; interpretation setValue 0&#xa;&quot;Multiply by Value&quot; outputLocation setIndex 0 0&#xa;&quot;Multiply by Value&quot; inputImage1 connect &quot;0_Aluminiummask_aluminium_mask.am&quot;&#xa;&quot;Multiply by Value&quot; value setValue 0 7&#xa;&quot;Multiply by Value&quot; applyTransformToResult 1&#xa;&quot;Multiply by Value&quot; fire&#xa;&quot;Multiply by Value&quot; setViewerMask 16383&#xa;&quot;Multiply by Value&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{e82fad39-b77a-45f6-8a0e-f4faa8da77d9}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{6e6e71a7-0c56-469c-a9ef-026d65b54b9a}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Add Image" resourceKey="addimage"/>
+      <StepInfo outputName="" name="Add Image" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create addimage &quot;Add Image&quot;&#xa;&quot;Add Image&quot; setVar &quot;CustomHelp&quot; {addimage.html}&#xa;&quot;Add Image&quot; setVar &quot;CustomXML&quot; {addimage_config.xml}&#xa;&quot;Add Image&quot; interpretation setValue 0&#xa;&quot;Add Image&quot; outputLocation setIndex 0 0&#xa;&quot;Add Image&quot; inputImage1 connect &quot;22_MultiplybyValue&quot;&#xa;&quot;Add Image&quot; inputImage2 connect &quot;20_AddImage&quot;&#xa;&quot;Add Image&quot; applyTransformToResult 1&#xa;&quot;Add Image&quot; fire&#xa;&quot;Add Image&quot; setViewerMask 16383&#xa;&quot;Add Image&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{f4f567b9-5aae-4ac3-b9a0-09740ad313b1}"/>
+        <Connection resultSlot="0" name="inputImage2" uid="{4b64dc2e-daf6-4a26-8c91-1a9f9452b4fe}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{c3909e4f-f459-4231-8b8d-1c5f01b91725}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Add Image(2)" resourceKey="addimage"/>
+      <StepInfo outputName="" name="Add Image" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create addimage &quot;Add Image(2)&quot;&#xa;&quot;Add Image(2)&quot; setVar &quot;CustomHelp&quot; {addimage.html}&#xa;&quot;Add Image(2)&quot; setVar &quot;CustomXML&quot; {addimage_config.xml}&#xa;&quot;Add Image(2)&quot; interpretation setValue 0&#xa;&quot;Add Image(2)&quot; outputLocation setIndex 0 0&#xa;&quot;Add Image(2)&quot; inputImage1 connect &quot;23_AddImage&quot;&#xa;&quot;Add Image(2)&quot; inputImage2 connect &quot;0_Electrodemask_electrode_mask&quot;&#xa;&quot;Add Image(2)&quot; applyTransformToResult 1&#xa;&quot;Add Image(2)&quot; fire&#xa;&quot;Add Image(2)&quot; setViewerMask 16383&#xa;&quot;Add Image(2)&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="inputImage1" uid="{6e6e71a7-0c56-469c-a9ef-026d65b54b9a}"/>
+        <Connection resultSlot="-1" name="inputImage2" uid="{7c15f120-f443-46aa-b5b4-4b924d456f0f}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+    <Step uid="{10e4d430-7809-482f-b85b-ad1cdf291577}">
+      <CommonInfo room="" reuseRoom="0" productVersion="2023.2" productName=""/>
+      <ToolInfo action="MODULE_TOOL" label="Convert Image Type(2)" resourceKey="HxCastField"/>
+      <StepInfo outputName="" name="Convert Image Type" paused="0" isResultSavedInRecordMode="0" comment="" isResultExportedInPool="0" areVolatile="0"/>
+      <Action initCommands="create HxCastField &quot;Convert Image Type(2)&quot;&#xa;&quot;Convert Image Type(2)&quot; setVar &quot;CustomHelp&quot; {HxCastField}&#xa;&quot;Convert Image Type(2)&quot; setVar &quot;CustomXML&quot; {HxCastField_config.xml}&#xa;&quot;Convert Image Type(2)&quot; data connect &quot;24_AddImage&quot;&#xa;&quot;Convert Image Type(2)&quot; colormap disconnect&#xa;&quot;Convert Image Type(2)&quot; colormap setDefaultColor 1 0.8 0.5&#xa;&quot;Convert Image Type(2)&quot; colormap setDefaultAlpha 0.500000&#xa;&quot;Convert Image Type(2)&quot; colormap activateLocalRange 1&#xa;&quot;Convert Image Type(2)&quot; colormap setLocalMinMax 0.000000 6.000000&#xa;&quot;Convert Image Type(2)&quot; colormap enableAlpha 1&#xa;&quot;Convert Image Type(2)&quot; colormap enableAlphaToggle 1&#xa;&quot;Convert Image Type(2)&quot; colormap setAutoAdjustRangeMode 1&#xa;&quot;Convert Image Type(2)&quot; colormap setColorbarMinMax 0 120&#xa;&quot;Convert Image Type(2)&quot; fire&#xa;&quot;Convert Image Type(2)&quot; colorFieldOptions setIndex 0 0&#xa;&quot;Convert Image Type(2)&quot; outputType setIndex 0 7&#xa;&quot;Convert Image Type(2)&quot; normalizationMode setIndex 0 0&#xa;&quot;Convert Image Type(2)&quot; fire&#xa;&quot;Convert Image Type(2)&quot; scaling setValue 0 1&#xa;&quot;Convert Image Type(2)&quot; scaling setValue 1 0&#xa;&quot;Convert Image Type(2)&quot; inputRange setValue 0 0&#xa;&quot;Convert Image Type(2)&quot; inputRange setValue 1 6&#xa;&quot;Convert Image Type(2)&quot; percentileRange setValue 0 0&#xa;&quot;Convert Image Type(2)&quot; percentileRange setValue 1 0&#xa;&quot;Convert Image Type(2)&quot; outputRange setValue 0 0&#xa;&quot;Convert Image Type(2)&quot; outputRange setValue 1 6&#xa;&quot;Convert Image Type(2)&quot; voxelGridOptions setValue 0 1&#xa;&quot;Convert Image Type(2)&quot; voxelGridOptions setToggleVisible 0 1&#xa;&quot;Convert Image Type(2)&quot; applyTransformToResult 1&#xa;&quot;Convert Image Type(2)&quot; fire&#xa;&quot;Convert Image Type(2)&quot; setViewerMask 16383&#xa;&quot;Convert Image Type(2)&quot; setPickable 1&#xa;" isReproducible="1" commandsNeedReplacement="1" applyCommands="" modifyInput="" getResultCommands="" canBePaused="1"/>
+      <Parameters/>
+      <Connections>
+        <Connection resultSlot="-2" name="data" uid="{c3909e4f-f459-4231-8b8d-1c5f01b91725}"/>
+      </Connections>
+      <Results>
+        <Result resultSlot="-2"/>
+        <Result resultSlot="0"/>
+      </Results>
+      <displayedPorts/>
+      <filenamePorts/>
+      <outputs>
+        <output name="" slotId="0"/>
+      </outputs>
+    </Step>
+  </WorkflowStepsList>
+  <Documentation>
+    <Body></Body>
+  </Documentation>
+</Workflow>
